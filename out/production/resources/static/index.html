@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마을을 함께 개선해요</title>
+    <style>
+        .title_background {
+
+            background-color: rgba(0, 0, 0, 0.644);
+        }
+
+        .title {
+            color: white;
+
+        }
+
+        .loc {
+            border: none;
+            width: 100px;
+            background-color: rgba(65, 56, 56, 0.3);
+            color: white;
+        }
+
+        #reason {
+            border: none;
+            height: 30px;
+            width: 200px;
+            margin-right: 30px;
+            background-color: rgba(58, 55, 55, 0);
+            font-size: 30px;
+            color: white;
+        }
+
+
+        #location {
+            color: white;
+
+        }
+
+        .container {
+            background-color: #535353;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 135px;
+            gap: 24px;
+            border: 1px solid #ebeaec;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 24px 24px;
+        }
+
+        .top {
+
+
+            font-weight: bold;
+            font-size: 16px;
+            color: white
+        }
+
+
+
+        .bottom .name {
+            position: absolute;
+            width: 100%;
+            left: 50%;
+            font-size: 13px;
+
+        }
+
+
+
+        .parent_block {
+            display: flex;
+            justify-content: row;
+            gap: 16px;
+        }
+
+        .select {
+            background-color: rgb(45, 46, 46);
+
+            color: white;
+            width: 130px;
+            height: 30px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .pic {}
+
+        .smt{
+            margin-top: 30px;
+            color:white;
+            background-color: rgb(45,46,46);
+            width: 150px;
+            height: 50px;
+            margin-left: 200px;
+            
+        }
+    </style>
+
+    <script>
+        let latitude;
+        let longitude;
+
+        navigator.geolocation.getCurrentPosition((position) => {
+            console.log(position)
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            console.log("latitude:" + latitude)
+            alert("latitude: " + latitude + "\n" + "longitude: " + longitude);
+
+            lat.value = latitude
+            lon.value = longitude
+
+
+
+
+
+
+        })
+
+
+
+
+
+
+
+
+    </script>
+
+</head>
+
+<body bgcolor="black">
+
+    <div class="title_background">
+        <h1 class="title">
+            어떤 개선이 필요한가요?
+
+        </h1>
+        <h2 id="location">
+            현재위치: 위도:<input type="text" class="loc" id="lat" disabled> 경도: <input type="text" class="loc" id="lon"
+                disabled>
+        </h2>
+        <h2 >
+            사유: <input type="text" id="reason" disabled value=null> 
+        </h2>
+
+
+
+
+    </div>
+
+    <div class="parent_block">
+
+
+        <div class="container">
+            <div class="top" style="text-align: center;">
+                <div>
+                    <img class="pic" src="nose.jpg">
+
+                </div>
+            </div>
+            <div class="bottom">
+
+                <input type="button" onclick="javascript: reason.value= value" class="select" value="악취">
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="top">
+                <div>
+                    <img src="bug.jpg" class="pic">
+
+                </div>
+            </div>
+            <div class="bottom">
+
+                <input type="button" onclick="javascript: reason.value= value" class="select" value="해충">
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="top">
+                <div>
+                    <img src="noise.jpg" class="pic">
+
+                </div>
+            </div>
+            <div class="bottom">
+
+                <input type="button" onclick="javascript: reason.value= value" class="select" value="소음">
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <div class="parent_block">
+        <div class="container">
+            <div class="top" style="text-align: center;">
+                <div>
+                    <img class="pic" src="dirty.jpg">
+
+                </div>
+            </div>
+            <div class="bottom">
+
+                <input type="button" onclick="javascript: reason.value= value" class="select" value="오염">
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="top" style="text-align: center;">
+                <div>
+                    <img class="pic" src="trafic.jpg">
+
+                </div>
+            </div>
+            <div class="bottom">
+
+                <input type="button" onclick="javascript: reason.value= value" class="select" value="교통불편">
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="top" style="text-align: center;">
+                <div>
+                    <img class="pic" src="beauty.jpg">
+
+                </div>
+            </div>
+            <div class="bottom">
+
+                <input type="button" onclick="javascript: reason.value= value" class="select" value="심미적 불편">
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" onclick="alert('제출되었습니다!')"  class="smt" value="제출">    
+    <div class="parent_block">
+
+    </div>
+
+
+
+</body>
+
+</html>
